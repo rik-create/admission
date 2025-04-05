@@ -37,7 +37,10 @@
     "types": [] // Explicitly specify which types to include
   },
   "include": [
-    "src/**/*",
+    "**/*.ts",
+    "**/*.tsx",
+    "next-env.d.ts",
+    "src/types/custom.d.ts",
     ".next/types/**/*.ts"
   ],
   "exclude": [
