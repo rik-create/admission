@@ -1,0 +1,9 @@
+// Add to your tsconfig.json
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/types/*": ["./src/types/*"]
+    }
+  }
+}

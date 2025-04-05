@@ -1,0 +1,33 @@
+@echo off
+cd /d "C:\USERS\XIONA\ADMISSION-SLIP-APP\SRC"
+
+:: Create new admin slip requests page
+mkdir "app\(admin)\slip-requests"
+echo // Slip Requests Page > "app\(admin)\slip-requests\page.tsx"
+echo // Layout for Slip Requests > "app\(admin)\slip-requests\layout.tsx"
+
+:: Create components for Slip Requests
+mkdir "components\admin\SlipRequests"
+echo // Table for slip requests > "components\admin\SlipRequests\SlipRequestsTable.tsx"
+echo // Modal for request details > "components\admin\SlipRequests\SlipDetailsModal.tsx"
+echo // Bulk actions UI > "components\admin\SlipRequests\BulkActionControls.tsx"
+echo // Auto-approval settings UI > "components\admin\SlipRequests\AutoApprovalSettings.tsx"
+
+:: Create API service file
+mkdir "lib\api"
+echo // API functions for slip requests > "lib\api\slipRequests.ts"
+
+:: Create hook for managing slip requests
+mkdir "lib\hooks"
+echo // Hook for slip requests > "lib\hooks\useSlipRequests.ts"
+
+:: Create type definitions
+mkdir "types\modules"
+echo // Type definitions for slip requests > "types\modules\slipRequests.d.ts"
+
+:: Create mock data file
+mkdir "data"
+echo { "requests": [] } > "data\mockSlipRequests.json"
+
+echo Setup complete! Slip Requests module has been added.
+pause

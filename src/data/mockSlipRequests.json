@@ -1,0 +1,45 @@
+[
+    {
+      "id": "req-1",
+      "student": {
+        "id": "stu-1",
+        "name": "Alex Johnson",
+        "email": "alex@school.edu"
+      },
+      "reason": "Doctor appointment",
+      "status": "pending",
+      "createdAt": "2023-05-15T09:30:00Z",
+      "details": {
+        "duration": 120,
+        "destination": "City Medical Center",
+        "notes": "Bringing medical certificate"
+      }
+    },
+    {
+      "id": "req-2",
+      "student": {
+        "id": "stu-2",
+        "name": "Maria Garcia",
+        "email": "maria@school.edu"
+      },
+      "reason": "Family emergency",
+      "status": "approved",
+      "createdAt": "2023-05-14T14:15:00Z",
+      "updatedAt": "2023-05-14T14:30:00Z"
+    },
+    {
+      "id": "req-3",
+      "student": {
+        "id": "stu-3",
+        "name": "James Wilson",
+        "email": "james@school.edu"
+      },
+      "reason": "Dentist visit",
+      "status": "rejected",
+      "createdAt": "2023-05-13T10:00:00Z",
+      "updatedAt": "2023-05-13T10:15:00Z",
+      "details": {
+        "notes": "No prior notice given"
+      }
+    }
+  ]
