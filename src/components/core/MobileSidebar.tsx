@@ -12,11 +12,20 @@ export function MobileSidebar({
   onClose: () => void
   role?: 'admin' | 'guard' | 'student'
 }) {
+  // Get the title based on role
+  const getPortalTitle = () => {
+    switch (role) {
+      case 'guard': return 'Guard Portal';
+      case 'student': return 'Student Portal';
+      default: return 'Admin Portal';
+    }
+  };
+
   return (
     // Added md:hidden to hide completely on desktop screens
     <div className={`fixed inset-y-0 left-0 z-40 w-64 bg-white shadow-lg sidebar-transition mobile-sidebar md:hidden ${open ? 'open' : ''}`}>
       <div className="flex items-center justify-between p-4 border-b">
-        <h1 className="text-xl font-bold">Admin Portal</h1>
+        <h1 className="text-xl font-bold">{getPortalTitle()}</h1>
         <button
           type="button"
           className="rounded-md text-gray-500 hover:text-gray-700"

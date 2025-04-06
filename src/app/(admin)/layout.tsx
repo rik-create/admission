@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Header } from "@/components/core/Header"
 import { MobileSidebar } from "@/components/core/MobileSidebar"
+import { Sidebar } from "@/components/core/Sidebar"
 import { Menu } from 'lucide-react'
 
 export default function AdminLayout({
@@ -11,15 +12,27 @@ export default function AdminLayout({
   children: React.ReactNode
 }) {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [user] = useState({
     name: 'Admin User',
     avatar: '/avatars/admin.png',
     notifications: 5
   })
 
+  const toggleSidebar = () => {
+    setSidebarCollapsed(!sidebarCollapsed)
+  }
+
   return (
     <div className={`flex min-h-screen bg-gray-50 text-black ${mobileSidebarOpen ? 'overflow-hidden' : ''}`}>
-      {/* Mobile Sidebar Only */}
+      {/* Desktop Sidebar - Only visible on md+ screens */}
+      <Sidebar
+        role="admin"
+        collapsed={sidebarCollapsed}
+        onToggleCollapse={toggleSidebar}
+      />
+
+      {/* Mobile Sidebar - Only visible on small screens */}
       <MobileSidebar
         open={mobileSidebarOpen}
         onClose={() => setMobileSidebarOpen(false)}
@@ -31,8 +44,8 @@ export default function AdminLayout({
         <div className="fixed inset-0 z-30 backdrop-blur-[1px] bg-black/10 md:hidden" />
       )}
 
-      {/* Main content area - Full width on all screen sizes */}
-      <div className="flex-1 flex flex-col w-full">
+      {/* Main content area - Adjusted to accommodate sidebar on larger screens */}
+      <div className="flex-1 flex flex-col w-full transition-all duration-300">
         {/* Show header unless mobile sidebar is open */}
         {!mobileSidebarOpen && (
           <Header user={user}>

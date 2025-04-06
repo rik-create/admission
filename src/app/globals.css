@@ -125,11 +125,17 @@
   transition: transform 0.3s ease-in-out;
 }
 
+/* Enhanced sidebar transition for smooth collapsing/expanding */
+.sidebar-transition {
+  transition: width 0.3s ease-in-out, min-width 0.3s ease-in-out;
+}
+
 /* Mobile sidebar specific styles */
 @media (max-width: 767px) {
   .mobile-sidebar {
     transform: translateX(-100%);
   }
+
   .mobile-sidebar.open {
     transform: translateX(0);
   }
@@ -141,15 +147,17 @@
     width: 100%;
     overflow-x: auto;
   }
-  
+
   .card-content {
     min-width: 100%;
   }
 }
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
